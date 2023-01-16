@@ -1,0 +1,17 @@
+D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.exe
+D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.deps.json
+D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.runtimeconfig.json
+D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.dll
+D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.pdb
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.csproj.AssemblyReference.cache
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.AssemblyInfoInputs.cache
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.AssemblyInfo.cs
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.csproj.CoreCompileInputs.cache
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.dll
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\refint\carter-cs.dll
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.pdb
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.genruntimeconfig.cache
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\ref\carter-cs.dll
+D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Carter\carter-cs\carter-cs\obj\Debug\net6.0\carter-cs.csproj.CopyComplete
