@@ -1,0 +1,17 @@
+C:\Users\Camsdono studios\source\repos\CarterCS\bin\Debug\net6.0\CarterCS.exe
+C:\Users\Camsdono studios\source\repos\CarterCS\bin\Debug\net6.0\CarterCS.deps.json
+C:\Users\Camsdono studios\source\repos\CarterCS\bin\Debug\net6.0\CarterCS.runtimeconfig.json
+C:\Users\Camsdono studios\source\repos\CarterCS\bin\Debug\net6.0\CarterCS.dll
+C:\Users\Camsdono studios\source\repos\CarterCS\bin\Debug\net6.0\CarterCS.pdb
+C:\Users\Camsdono studios\source\repos\CarterCS\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.csproj.AssemblyReference.cache
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.AssemblyInfoInputs.cache
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.AssemblyInfo.cs
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.csproj.CoreCompileInputs.cache
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.csproj.CopyComplete
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.dll
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\refint\CarterCS.dll
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.pdb
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\CarterCS.genruntimeconfig.cache
+C:\Users\Camsdono studios\source\repos\CarterCS\obj\Debug\net6.0\ref\CarterCS.dll
