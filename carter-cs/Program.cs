@@ -9,11 +9,12 @@ using System.Net.Http.Headers;
 
 class CarterCS
 {
-    static void SendMessageToCarter(string apiKey, string message, string uuid, string scene = "level-1")
+    static string SendMessageToCarter(string apiKey, string message, string uuid, string scene = "level-1")
     {
         var url = "https://api.carterapi.com/v0/chat";
         var payload = JsonConvert.SerializeObject(new { api_key = apiKey, query = message, uuid = uuid, scene });
-        var content = new StringContent(payload, System.Text.Encoding.UTF8, "application/json");
+        var content = new StringContent(payload, Encoding.UTF8, "application/json");
+        string result = "";
         using (var client = new HttpClient())
         {
             var response = client.PostAsync(url, content).Result;
@@ -21,17 +22,17 @@ class CarterCS
 
             var jsonObject = JsonConvert.DeserializeObject<dynamic>(responseText);
 
-            string result = jsonObject["output"].text.ToString();
-
-            Console.WriteLine(result);
+            result = jsonObject["output"].text.ToString();
         }
+        return result;
     }
 
-    static void SendMessageToCarter(string apiKey, string message, string uuid)
+    static string SendMessageToCarter(string apiKey, string message, string uuid)
     {
         var url = "https://api.carterapi.com/v0/chat";
         var payload = JsonConvert.SerializeObject(new { api_key = apiKey, query = message, uuid = uuid });
-        var content = new StringContent(payload, System.Text.Encoding.UTF8, "application/json");
+        var content = new StringContent(payload, Encoding.UTF8, "application/json");
+        string result = "";
         using (var client = new HttpClient())
         {
             var response = client.PostAsync(url, content).Result;
@@ -39,14 +40,20 @@ class CarterCS
 
             var jsonObject = JsonConvert.DeserializeObject<dynamic>(responseText);
 
-            string result = jsonObject["output"].text.ToString();
-
-            Console.WriteLine(result);                             
+            result = jsonObject["output"].text.ToString();                          
         }
+
+        return result;
+    }
+
+    static void CheckCarterStatus()
+    {
+        Console.WriteLine("Carter Is working!");
     }
 
     static public void Main(String[] args)
     {
-        SendMessageToCarter("hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", "Hello", "admin-1");
+        string response = SendMessageToCarter("hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", "Hello", "admin-1");
+        Console.WriteLine(response);
     }
 }
