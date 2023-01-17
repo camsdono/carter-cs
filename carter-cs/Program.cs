@@ -7,31 +7,24 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-string url = "https://api.carterapi.com/v0/chat";
-
-async void ReachCarter(string apiKey, string carterMessage, string userID, string sceneName) 
+class CarterCS
 {
-    var payload = JsonConvert.SerializeObject(new
+    //api key hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw
+    static void SendMessageToCarter(string apiKey, string message, string uuid, string scene = "level-1")
     {
-        api_key = apiKey,
-        query = carterMessage,
-        uuid = userID,
-        scene = sceneName
-    });
+        var url = "https://api.carterapi.com/v0/chat";
+        var payload = JsonConvert.SerializeObject(new { api_key = apiKey, query = message, uuid = uuid, scene });
+        var content = new StringContent(payload, System.Text.Encoding.UTF8, "application/json");
+        using (var client = new HttpClient())
+        {
+            var response = client.PostAsync(url, content).Result;
+            var responseText = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(responseText);
+        }
+    }
 
-    var client = new HttpClient();
-    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-    var httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
-    var response = await client.PostAsync(url, httpContent);
-    var json = await response.Content.ReadAsStringAsync();
-    Console.WriteLine(json);
-    var jsonObject = JsonConvert.DeserializeObject<dynamic>(json);
-
-    string result = jsonObject["output"].text.ToString();
-    Console.WriteLine(result);
+    static public void Main(String[] args)
+    {
+        SendMessageToCarter("hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", "Hello", "admin-1", "bombs_away");
+    }
 }
-
-ReachCarter("hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", "Hello", "admin-1", "bombs_away");
-
-
