@@ -20,3 +20,24 @@ Once you have set that up you can call functions from it.
 To check the api status call ```carter.CheckStatus();```
 
 To send a message to your agent call ```carter.SendMessageToCarter();``` - Inside of this tag you have to call in this order the ApiKey, message, userID and optionally a scene.
+
+## Example
+
+```
+ class TestCarter
+    {
+        static public void Main(String[] args)
+        {
+            // Creates CarterCS
+            CarterCS carter = new CarterCS();
+
+            //Checks Carters Server Status
+            carter.CheckStatus();
+
+            //Get a response from carter 
+            string response = carter.SendMessageToCarter(/* API Key: */ "", /* Message: */ "Hello", /* UserID: */ "admin-1", /* Scene Optional */ "Scene_1");
+            //Outputs that response.
+            Console.WriteLine(response);
+        }
+    }
+```
