@@ -19,7 +19,9 @@ Once you have set that up you can call functions from it.
 
 To check the api status call ```carter.CheckStatus();```
 
-To send a message to your agent call ```carter.SendMessageToCarter();``` - Inside of this tag you have to call in this order the ApiKey, message, userID and optionally a scene.
+To send one message to your agent call ```carter.SendMessageToCarter("YourAPIKey", "YourMessage", "YourUserID", "YourScene"/Optional);``` a scene.
+
+To have a looping conversation you can call ```carter.StartConversationToCarter("YourAPIKey", "YourUserID", "YourScene"/optional);```
 
 ## Example
 
