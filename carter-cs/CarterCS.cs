@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text.Json.Nodes;
+using System.Net;
 
 namespace carter_cs {
     public class CarterCS
@@ -51,6 +53,26 @@ namespace carter_cs {
             }
 
             return result;
+        }
+
+        public void CheckStatus()
+        {
+            string url = "https://api.carterapi.com/status";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                   Console.WriteLine("Carter Servers Are: " + response.StatusCode.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Carter Servers Are: " + response.StatusCode.ToString());
+                }
+            }
         }
     }
 }
