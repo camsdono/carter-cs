@@ -63,6 +63,22 @@ namespace carter_cs {
             }
         }
 
+        public string StartConversationToCarter(string apiKey, string uuid, string scene)
+        {
+            string result = "";
+            while (true)
+            {
+                Console.WriteLine("Message to carter: ");
+                string message = Console.ReadLine();
+                if (message == "exit")
+                {
+                    return "Exited.";
+                }
+
+                Console.WriteLine(SendMessageToCarter(apiKey, message, uuid, scene));
+            }
+        }
+
         public void CheckStatus()
         {
             string url = "https://api.carterapi.com/status";
