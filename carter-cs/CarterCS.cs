@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Newtonsoft.Json;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text.Json.Nodes;
 using System.Net;
 
 namespace carter_cs {
@@ -55,6 +48,21 @@ namespace carter_cs {
             return result;
         }
 
+        public string StartConversationToCarter(string apiKey, string uuid)
+        {
+            string result = "";
+            while (true) {
+                Console.WriteLine("Message to carter: ");
+                string message = Console.ReadLine();
+                if(message == "exit")
+                {
+                    return "Exited.";
+                }
+
+                Console.WriteLine(SendMessageToCarter(apiKey, message, uuid));
+            }
+        }
+
         public void CheckStatus()
         {
             string url = "https://api.carterapi.com/status";
@@ -63,7 +71,6 @@ namespace carter_cs {
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                    Console.WriteLine("Carter Servers Are: " + response.StatusCode.ToString());
