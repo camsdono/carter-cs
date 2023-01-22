@@ -18,12 +18,12 @@ namespace carter_cs
             carter.CheckStatus();
 
             //Get a response from carter 
-            //string response = carter.SendMessageToCarter(/* API Key: */ "hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", /* Message: */ "Hello", /* UserID: */ "admin-1", /* Scene Optional */ "Scene_1");
+            string response = carter.SendMessageToCarter(/* API Key: */ "hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", /* Message: */ "Hello", /* UserID: */ "admin-1", /* Scene Optional */ "Scene_1");
             //Outputs that response.
-            //Console.WriteLine(response);
+            Console.WriteLine(response);
 
             //Start conversation with carter
-            carter.StartConversationToCarter("hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", "admin-1");
+           
         }
     }
 }

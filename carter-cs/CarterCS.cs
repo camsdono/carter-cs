@@ -48,73 +48,7 @@ namespace carter_cs {
             return result;
         }
 
-        public string StartConversationToCarter(string apiKey, string uuid)
-        {
-            Console.WriteLine("Message to carter: ");
-            string result = "";
-            string message = Console.ReadLine();
-            result = SendMessageToCarter(apiKey, message, uuid);
-            Console.WriteLine(result);
-
-
-            while (true)
-            {
-                Console.WriteLine("Message to carter: ");
-                message = Console.ReadLine();
-
-                if (message == "exit")
-                {
-                    return "Exited.";
-                }
-
-                if (message == "downvote")
-                {
-                    Console.WriteLine("Downvoted the message: " + result);
-                    Downvote(result);
-                    message = "";
-                }
-
-                if (message != "")
-                {
-                    result = SendMessageToCarter(apiKey, message, uuid);
-                    Console.WriteLine(result);
-                }
-            }
-        }
-
-        public string StartConversationToCarter(string apiKey, string uuid, string scene)
-        {
-            Console.WriteLine("Message to carter: ");
-            string result = "";
-            string message = Console.ReadLine();
-            result = SendMessageToCarter(apiKey, message, uuid, scene);
-            Console.WriteLine(result);
-
-
-            while (true)
-            {
-                Console.WriteLine("Message to carter: ");
-                message = Console.ReadLine();
-
-                if (message == "exit")
-                {
-                    return "Exited.";
-                }
-
-                if (message == "downvote")
-                {
-                    Console.WriteLine("Downvoted the message: " + result);
-                    Downvote(result);
-                    message = "";
-                }
-
-                if (message != "")
-                {
-                    result = SendMessageToCarter(apiKey, message, uuid, scene);
-                    Console.WriteLine(result);
-                }
-            }
-        }
+        
 
         public void CheckStatus()
         {
