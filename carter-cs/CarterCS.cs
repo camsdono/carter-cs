@@ -1,8 +1,10 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using System.Net;
+using System.Security.Cryptography;
 
 namespace carter_cs {
+
     public class CarterCS
     {
         public string SendMessageToCarter(string apiKey, string message, string uuid, string scene = "level-1")
@@ -11,6 +13,7 @@ namespace carter_cs {
             var payload = JsonConvert.SerializeObject(new { api_key = apiKey, query = message, uuid = uuid, scene });
             var content = new StringContent(payload, Encoding.UTF8, "application/json");
             string result = "";
+            string tid = "";
             using (var client = new HttpClient())
             {
                 if (client != null)
@@ -21,6 +24,7 @@ namespace carter_cs {
                     var jsonObject = JsonConvert.DeserializeObject<dynamic>(responseText);
 
                     result = jsonObject["output"].text.ToString();
+                    tid = jsonObject["tid"].ToString();
                 }
             }
             return result;
@@ -32,6 +36,7 @@ namespace carter_cs {
             var payload = JsonConvert.SerializeObject(new { api_key = apiKey, query = message, uuid = uuid });
             var content = new StringContent(payload, Encoding.UTF8, "application/json");
             string result = "";
+            string tid = "";
             using (var client = new HttpClient())
             {
                 if (client != null)
@@ -42,13 +47,47 @@ namespace carter_cs {
                     var jsonObject = JsonConvert.DeserializeObject<dynamic>(responseText);
 
                     result = jsonObject["output"].text.ToString();
+                    tid = jsonObject["tid"].ToString();
                 }
             }
 
             return result;
         }
 
-        
+        public string StartConversationToCarter(string apiKey, string uuid)
+        {
+            Console.WriteLine("Message to carter: ");
+            string result = "";
+            string message = Console.ReadLine();
+            result = SendMessageToCarter(apiKey, message, uuid);
+
+            Console.WriteLine(result);
+
+
+            while (true)
+            {
+                Console.WriteLine("Message to carter: ");
+                message = Console.ReadLine();
+
+                if (message == "exit")
+                {
+                    return "Exited.";
+                }
+
+                if (message == "downvote")
+                {
+                    Console.WriteLine("Downvoted the message: " + result);
+                    Downvote(result);
+                    message = "";
+                }
+
+                if (message != "")
+                {
+                    result = SendMessageToCarter(apiKey, message, uuid);
+                    Console.WriteLine(result);
+                }
+            }
+        }
 
         public void CheckStatus()
         {
@@ -69,7 +108,7 @@ namespace carter_cs {
             }
         }
 
-        public void Downvote(string downvotedMessage)
+        public void Downvote(string downvotedMessageID)
         {
              
         }
