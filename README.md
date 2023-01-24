@@ -3,11 +3,8 @@
 
 # Documentation for V0.01
 
-Requries For Baseline Newtonsoft.Json To Be installed
 
 How to use CarterCS.
-
-1. Download the source code and make sure you have the C# dependice (Newtonsoft.Json;) Installed.
 
 To get started you need to create an agent on the user dashboard (https://dashboard.carterapi.com/) 
 
