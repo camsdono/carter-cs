@@ -5,7 +5,8 @@ using System.Text.Json.Nodes;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace carter_cs {
+namespace carter_cs
+{
     public class CarterCS
     {
         public string SendMessageToCarter(string apiKey, string message, string uuid, string scene = "level-1")
@@ -157,7 +158,7 @@ namespace carter_cs {
             {
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                   Console.WriteLine("Carter Servers Are: " + response.StatusCode.ToString());
+                    Console.WriteLine("Carter Servers Are: " + response.StatusCode.ToString());
                 }
                 else
                 {
@@ -168,7 +169,7 @@ namespace carter_cs {
 
         public void Downvote(string downvotedMessageID)
         {
-             
+
         }
     }
 }
