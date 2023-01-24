@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KEQ62eJmLI3Dm5nMOePj09zfJoL3WwGLEmGs9cJ2+AVEbDn2spnP/Ve6/4sIZd2vtS5z5x9w/+JgTP4Xngtb6A==",
+  "dgSpecHash": "a4ek5t8wi2Pf64z6U1scMdk1cTbuVptgifTSIzyWtUE4iSOx/o57V5VFF8zCsC7I5QZ+wdqqpaeNCl5I/ueUng==",
   "success": true,
-  "projectFilePath": "D:\\Carter\\carter-cs\\carter-cs\\carter-cs.csproj",
+  "projectFilePath": "C:\\Users\\Camsdono studios\\Desktop\\CarterCS\\carter-cs\\carter-cs\\carter-cs\\CarterCS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\camsd\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\Camsdono studios\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
   "logs": []
 }

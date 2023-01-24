@@ -1,7 +1,6 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using System.Net;
-using System.Security.Cryptography;
 
 namespace carter_cs {
 
@@ -54,40 +53,7 @@ namespace carter_cs {
             return result;
         }
 
-        public string StartConversationToCarter(string apiKey, string uuid)
-        {
-            Console.WriteLine("Message to carter: ");
-            string result = "";
-            string message = Console.ReadLine();
-            result = SendMessageToCarter(apiKey, message, uuid);
-
-            Console.WriteLine(result);
-
-
-            while (true)
-            {
-                Console.WriteLine("Message to carter: ");
-                message = Console.ReadLine();
-
-                if (message == "exit")
-                {
-                    return "Exited.";
-                }
-
-                if (message == "downvote")
-                {
-                    Console.WriteLine("Downvoted the message: " + result);
-                    Downvote(result);
-                    message = "";
-                }
-
-                if (message != "")
-                {
-                    result = SendMessageToCarter(apiKey, message, uuid);
-                    Console.WriteLine(result);
-                }
-            }
-        }
+        
 
         public void CheckStatus()
         {
