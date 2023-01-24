@@ -110,8 +110,14 @@ namespace carter_cs {
         {
             Console.WriteLine("Message to carter: ");
             string result = "";
+            string tid = "";
             string message = Console.ReadLine();
             result = SendMessageInConversaition(apiKey, message, uuid);
+
+            var jsonObject = JsonConvert.DeserializeObject<dynamic>(result);
+
+            result = jsonObject["output"].text.ToString();
+
             Console.WriteLine(result);
 
 
