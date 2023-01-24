@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Camsdono studios\\source\\repos\\CarterCS\\CarterCS.csproj": {}
+    "C:\\Users\\Camsdono studios\\Desktop\\CarterCS\\carter-cs\\carter-cs\\carter-cs\\CarterCS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Camsdono studios\\source\\repos\\CarterCS\\CarterCS.csproj": {
+    "C:\\Users\\Camsdono studios\\Desktop\\CarterCS\\carter-cs\\carter-cs\\carter-cs\\CarterCS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camsdono studios\\source\\repos\\CarterCS\\CarterCS.csproj",
+        "projectUniqueName": "C:\\Users\\Camsdono studios\\Desktop\\CarterCS\\carter-cs\\carter-cs\\carter-cs\\CarterCS.csproj",
         "projectName": "CarterCS",
-        "projectPath": "C:\\Users\\Camsdono studios\\source\\repos\\CarterCS\\CarterCS.csproj",
+        "projectPath": "C:\\Users\\Camsdono studios\\Desktop\\CarterCS\\carter-cs\\carter-cs\\carter-cs\\CarterCS.csproj",
         "packagesPath": "C:\\Users\\Camsdono studios\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camsdono studios\\source\\repos\\CarterCS\\obj\\",
+        "outputPath": "C:\\Users\\Camsdono studios\\Desktop\\CarterCS\\carter-cs\\carter-cs\\carter-cs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

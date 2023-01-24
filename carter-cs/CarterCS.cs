@@ -1,6 +1,9 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using System.Net;
+using System.Text.Json.Nodes;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace carter_cs {
     public class CarterCS
@@ -48,7 +51,95 @@ namespace carter_cs {
             return result;
         }
 
-        
+        public string StartConversationToCarter(string apiKey, string uuid)
+        {
+            Console.WriteLine("Message to carter: ");
+            string result = "";
+            string message = Console.ReadLine();
+            result = SendMessageToCarter(apiKey, message, uuid);
+            Console.WriteLine(result);
+
+
+            while (true)
+            {
+                Console.WriteLine("Message to carter: ");
+                message = Console.ReadLine();
+
+                if (message == "exit")
+                {
+                    return "Exited.";
+                }
+
+                if (message == "downvote")
+                {
+                    Console.WriteLine("Downvoted the message: " + result);
+                    Downvote(result);
+                    message = "";
+                }
+
+                if (message != "")
+                {
+                    result = SendMessageToCarter(apiKey, message, uuid);
+                    Console.WriteLine(result);
+                }
+            }
+        }
+
+        private string SendMessageInConversaition(string apiKey, string message, string uuid)
+        {
+            var url = "https://api.carterapi.com/v0/chat";
+            var payload = JsonConvert.SerializeObject(new { api_key = apiKey, query = message, uuid = uuid });
+            var content = new StringContent(payload, Encoding.UTF8, "application/json");
+            string result = "";
+            using (var client = new HttpClient())
+            {
+                if (client != null)
+                {
+                    var response = client.PostAsync(url, content).Result;
+                    var responseText = response.Content.ReadAsStringAsync().Result;
+
+                    var jsonObject = System.Text.Json.JsonSerializer.Deserialize<dynamic>(responseText);
+                    result = System.Text.Json.JsonSerializer.Serialize(jsonObject);
+                }
+            }
+
+            return result;
+        }
+
+        public string StartConversationToCarter(string apiKey, string uuid, string scene)
+        {
+            Console.WriteLine("Message to carter: ");
+            string result = "";
+            string message = Console.ReadLine();
+            result = SendMessageInConversaition(apiKey, message, uuid);
+            Console.WriteLine(result);
+
+
+            while (true)
+            {
+                Console.WriteLine("Message to carter: ");
+                message = Console.ReadLine();
+
+                if (message == "exit")
+                {
+                    return "Exited.";
+                }
+
+                if (message == "downvote")
+                {
+                    Console.WriteLine("Downvoted the message: " + result);
+                    Downvote(result);
+                    message = "";
+                }
+
+                if (message != "")
+                {
+                    result = SendMessageToCarter(apiKey, message, uuid, scene);
+                    Console.WriteLine(result);
+                }
+            }
+        }
+
 
         public void CheckStatus()
         {
@@ -69,7 +160,7 @@ namespace carter_cs {
             }
         }
 
-        public void Downvote(string downvotedMessage)
+        public void Downvote(string downvotedMessageID)
         {
              
         }
