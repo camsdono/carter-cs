@@ -6,7 +6,22 @@
     <RootNamespace>carter_cs</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Carter C#</Title>
+    <Company>Camsdono Studios</Company>
+    <Authors>Camsdono</Authors>
+    <Product>Carter-C#</Product>
+    <Description>CarterC# is built upon CarterAPI for C# Support</Description>
+    <Copyright>Carter</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="newtonsoft.json" Version="13.0.2" />

@@ -11,11 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("carter-cs")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Camsdono Studios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Carter")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("CarterC# is built upon CarterAPI for C# Support")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("carter-cs")]
+[assembly: System.Reflection.AssemblyProductAttribute("Carter-C#")]
 [assembly: System.Reflection.AssemblyTitleAttribute("carter-cs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

@@ -3,8 +3,12 @@
   <metadata>
     <id>carter-cs</id>
     <version>1.0.0</version>
-    <authors>carter-cs</authors>
-    <description>Package Description</description>
+    <title>Carter C#</title>
+    <authors>Camsdono</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <description>CarterC# is built upon CarterAPI for C# Support</description>
+    <copyright>Carter</copyright>
     <dependencies>
       <group targetFramework="net6.0">
         <dependency id="newtonsoft.json" version="13.0.2" exclude="Build,Analyzers" />
@@ -14,5 +18,6 @@
   <files>
     <file src="D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.runtimeconfig.json" target="lib\net6.0\carter-cs.runtimeconfig.json" />
     <file src="D:\Carter\carter-cs\carter-cs\bin\Debug\net6.0\carter-cs.dll" target="lib\net6.0\carter-cs.dll" />
+    <file src="D:\Carter\carter-cs\LICENSE" target="\LICENSE" />
   </files>
 </package>
