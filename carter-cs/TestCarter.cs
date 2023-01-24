@@ -23,6 +23,7 @@ namespace carter_cs
             Console.WriteLine(response);
 
             //Start conversation with carter
+            carter.StartConversationToCarter("hnzD16Ejl0A4WWJsnt96Yz8qE9fs0iNw", "admin-1");
            
         }
     }
