@@ -1,9 +1,9 @@
 ﻿using System.Text;
-using Newtonsoft.Json;
 using System.Net;
 using System.Text.Json.Nodes;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace carter_cs
 {
@@ -121,6 +121,8 @@ namespace carter_cs
             }
         }
 
+
+
         public string StartConversationToCarter(string apiKey, string uuid)
         {
             Console.WriteLine("Message to carter: ");
@@ -190,7 +192,23 @@ namespace carter_cs
 
         public void Downvote(string downvotedMessageID, string apiKEY)
         {
+            var client = new HttpClient();
+            var json = JsonConvert.SerializeObject(new
+            {
+                api_key = apiKEY,
+                tid = downvotedMessageID
+            });
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = client.PostAsync("https://api.carterapi.com/v0/downvote", content).Result;
 
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                Console.WriteLine("Downvote Status: " + response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Downvote Status: " + response.StatusCode.ToString());
+            }
         }
     }
 }
