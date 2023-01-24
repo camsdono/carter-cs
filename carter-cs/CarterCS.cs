@@ -52,39 +52,6 @@ namespace carter_cs
             return result;
         }
 
-        public string StartConversationToCarter(string apiKey, string uuid)
-        {
-            Console.WriteLine("Message to carter: ");
-            string result = "";
-            string message = Console.ReadLine();
-            result = SendMessageToCarter(apiKey, message, uuid);
-            Console.WriteLine(result);
-
-
-            while (true)
-            {
-                Console.WriteLine("Message to carter: ");
-                message = Console.ReadLine();
-
-                if (message == "exit")
-                {
-                    return "Exited.";
-                }
-
-                if (message == "downvote")
-                {
-                    Console.WriteLine("Downvoted the message: " + result);
-                    Downvote(result);
-                    message = "";
-                }
-
-                if (message != "")
-                {
-                    result = SendMessageToCarter(apiKey, message, uuid);
-                    Console.WriteLine(result);
-                }
-            }
-        }
 
         private string SendMessageInConversaition(string apiKey, string message, string uuid)
         {
@@ -118,6 +85,7 @@ namespace carter_cs
             var jsonObject = JsonConvert.DeserializeObject<dynamic>(result);
 
             result = jsonObject["output"].text.ToString();
+            tid = jsonObject["tid"].ToString();
 
             Console.WriteLine(result);
 
@@ -135,13 +103,66 @@ namespace carter_cs
                 if (message == "downvote")
                 {
                     Console.WriteLine("Downvoted the message: " + result);
-                    Downvote(result);
+                    Downvote(tid, apiKey);
                     message = "";
                 }
 
                 if (message != "")
                 {
-                    result = SendMessageToCarter(apiKey, message, uuid, scene);
+                    result = SendMessageInConversaition(apiKey, message, uuid);
+
+                    jsonObject = JsonConvert.DeserializeObject<dynamic>(result);
+
+                    result = jsonObject["output"].text.ToString();
+                    tid = jsonObject["tid"].ToString();
+
+                    Console.WriteLine(result);
+                }
+            }
+        }
+
+        public string StartConversationToCarter(string apiKey, string uuid)
+        {
+            Console.WriteLine("Message to carter: ");
+            string result = "";
+            string tid = "";
+            string message = Console.ReadLine();
+            result = SendMessageInConversaition(apiKey, message, uuid);
+
+            var jsonObject = JsonConvert.DeserializeObject<dynamic>(result);
+
+            result = jsonObject["output"].text.ToString();
+            tid = jsonObject["tid"].ToString();
+
+            Console.WriteLine(result);
+
+
+            while (true)
+            {
+                Console.WriteLine("Message to carter: ");
+                message = Console.ReadLine();
+
+                if (message == "exit")
+                {
+                    return "Exited.";
+                }
+
+                if (message == "downvote")
+                {
+                    Console.WriteLine("Downvoted the message: " + result);
+                    Downvote(tid, apiKey);
+                    message = "";
+                }
+
+                if (message != "")
+                {
+                    result = SendMessageInConversaition(apiKey, message, uuid);
+
+                    jsonObject = JsonConvert.DeserializeObject<dynamic>(result);
+
+                    result = jsonObject["output"].text.ToString();
+                    tid = jsonObject["tid"].ToString();
+
                     Console.WriteLine(result);
                 }
             }
@@ -167,7 +188,7 @@ namespace carter_cs
             }
         }
 
-        public void Downvote(string downvotedMessageID)
+        public void Downvote(string downvotedMessageID, string apiKEY)
         {
 
         }
